@@ -11,6 +11,7 @@ using Sfs2X.Core;
 using Sfs2X.Entities;
 using Sfs2X.Requests;
 using Sfs2X.Entities.Data;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 
@@ -51,7 +52,8 @@ public class GameController : MonoBehaviour {
 		if (SmartFoxConnection.IsInitialized) {
 			sfs = SmartFoxConnection.Connection;
 		} else {
-			Application.LoadLevel("Login");
+            //SceneManager.LoadScene("Game");
+            //Application.LoadLevel("Login");
 			return;
 		}
 
@@ -112,8 +114,9 @@ public class GameController : MonoBehaviour {
 		// Leave current room
 		sfs.Send(new Sfs2X.Requests.LeaveRoomRequest());
 
-		// Return to lobby scene
-		Application.LoadLevel("Lobby");
+        // Return to lobby scene
+        //Application.LoadLevel("Lobby");
+        SceneManager.LoadScene("Lobby");
 	}
 	
 	//----------------------------------------------------------

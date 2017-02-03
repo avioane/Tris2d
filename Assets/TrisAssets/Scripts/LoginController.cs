@@ -9,6 +9,7 @@ using Sfs2X.Logging;
 using Sfs2X.Util;
 using Sfs2X.Core;
 using Sfs2X.Entities;
+using UnityEngine.SceneManagement;
 
 public class LoginController : MonoBehaviour {
 
@@ -57,7 +58,8 @@ public class LoginController : MonoBehaviour {
 
 		// Enable interface
 		enableLoginUI(true);
-	}
+        SceneManager.LoadScene("Game");//        Application.LoadLevel("Game");
+    }
 	
 	// Update is called once per frame
 	void Update() {
@@ -160,8 +162,8 @@ public class LoginController : MonoBehaviour {
 		reset();
 
 		// Load lobby scene
-		Application.LoadLevel("Lobby");
-	}
+		SceneManager.LoadScene("Lobby"); //Application.LoadLevel("Lobby");
+    }
 	
 	private void OnLoginError(BaseEvent evt) {
 		// Disconnect
