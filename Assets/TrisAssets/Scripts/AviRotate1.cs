@@ -11,6 +11,7 @@ public class AviRotate1 : MonoBehaviour {
 
     public void Rotate1()
     {
+        //print("test");
         GameObject.FindGameObjectWithTag("a1").transform.rotation *= Quaternion.Euler(0, 0, -90);
         //if (Input.GetMouseButtonUp(0))
         //{
